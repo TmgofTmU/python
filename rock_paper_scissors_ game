@@ -1,0 +1,38 @@
+import random
+choices = ['rock','paper', 'scissors']
+while True:
+ computer = random.choice(choices)
+ a= None
+
+ while a not in choices:
+  if a not in choices:
+    print ("use the correct words")
+  a = input(f'rock , paper , scissors ?').lower()
+
+ print ("computer : ", computer)
+ print("player: ", a)
+ if a == computer: 
+
+  print ("tie")
+ elif a== 'rock':
+    if computer == 'scissors':
+      print("computer losse")
+    elif computer == "paper":
+        print ('computer won')
+ elif a == 'scissors':
+    if computer == 'paper':
+        print('comptuer loose')
+    elif computer == "rock":
+        print('computer won')
+ elif a == 'paper':
+    if computer == 'rock':
+        print('comptuer loose')
+    elif computer == "scissors":
+        print('computer won')
+ b= input("want to play again? (yes/no)")
+ if b!="yes":
+    break
+
+print ("thaynk you for playing \n this game was created by bishesh rimal")
+
+
