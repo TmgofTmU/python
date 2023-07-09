@@ -1,0 +1,61 @@
+import time
+
+# a= int(input("there are 5 question in the dictionary. choose one between 1 to 5 "))
+questions= {'what is the worlds largest country':'a',
+'what is the wordls highest mountain':'b',
+'what is the worlds smallest country':'c',
+'what is the capital city of south korea':'d'}
+
+options = [['a.russia ','b india. ','c. usa ','d. eldorado'],
+          ['a. monaco','b. sagarmatha ','c. fuji','d. dildo'],
+          ['a. monnaco ','b. france ','c. vatican city','d. thailand'],
+          ['a. kathmandu','b. new delhi','c.moscow ','d. seoul']]
+
+def new_game():
+    guesses=[]
+    correct_guesses =0
+    question_num = 1
+    
+   
+    for key in questions:
+        print ("........................\n",key)
+        time.sleep(1)
+        for i in options[question_num-1]:
+         print (i)
+        guess = input('enter (a, b, c, d)').lower()
+        guesses.append(guess)
+
+        correct_guesses += check_answer(questions.get(key),guess)
+        question_num += 1
+        
+    display_score(correct_guesses,guesses)
+
+    
+def check_answer(answer, guess):
+    time.sleep(1)
+    if answer == guess:
+        print ("..................................!!!correct")
+        return 1
+    else:
+        print(".............................!!wrong:")
+        return 0
+
+def display_score(correct_guesses, guesses):
+    time.sleep(1)
+    print (".....\nresults\n.......\n")
+    time.sleep(1)
+    
+    print('guesses: \n ')
+    for i in guesses:
+        print(i,'\n ')
+    
+
+    for i in str(correct_guesses):
+        print (f"correct gueses are " ,i,'out of 4 \n')
+    
+def play_again():
+    pass
+
+new_game()
+
+
